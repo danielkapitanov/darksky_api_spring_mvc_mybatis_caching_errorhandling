@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Weekly Forecast</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+
+
+<article th:each="day : ${fc}">
+    <header>
+        <h1 th:text="${day.date}">date</h1>
+        <p th:text="'Summary: ' + ${day.summary}">summary</p>
+        <p th:text="'Sunrise time: ' + ${day.sunrise}">sunrise</p>
+        <p th:text="'Sunset time: ' + ${day.sunset}">sunset</p>
+        <p th:text="'Precipitation probability: ' + ${day.precipProbability}">precip</p>
+        <p th:text="'Max temperature: ' + ${day.temperatureMax}">temp</p>
+        <p th:text="'Wind Speed: ' + ${day.windSpeed}">wind</p>
+    </header>
+
+</article>
+
+<br></br>
+
+<button type="button"><a href="/forecast">Check another latitude and longitude</a></button>
+</body>
+</html>
